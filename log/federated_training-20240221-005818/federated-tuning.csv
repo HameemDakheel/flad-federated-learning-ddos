@@ -1,0 +1,7 @@
+Model,Epochs,Steps,Mode,Weighted,Experiment,ClientsOrder,Round,TotalClientRounds,F1,F1_std,Time(sec),sample-dataset(f1),sample-dataset(rounds)
+mlp,auto,auto,flad,False,0,0,1,1,0.93443,0.00000,016.95,0.93443,1
+mlp,auto,auto,flad,False,0,0,2,2,0.93733,0.00000,021.12,0.93733,2
+mlp,auto,auto,flad,False,0,0,3,3,0.93733,0.00000,018.36,0.93733,3
+mlp,auto,auto,flad,False,0,0,4,4,0.93733,0.00000,016.18,0.93733,4
+mlp,auto,auto,flad,False,0,0,5,5,0.93733,0.00000,016.75,0.93733,5
+mlp,auto,auto,flad,False,0,0,6,6,0.93733,0.00000,015.80,0.93733,6

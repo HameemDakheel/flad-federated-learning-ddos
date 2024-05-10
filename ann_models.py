@@ -141,6 +141,7 @@ def init_client(subfolder, X_train, Y_train, X_val, Y_val, dataset_name, time_wi
     client['time_window'] = time_window
     client['max_flow_len'] = max_flow_len
     client['flddos_lambda'] = 0.9 if "WebDDoS" in client['name'] or "Syn" in client['name'] else 1
+    # print("Client: ", client)
     reset_client(client)
     return client
 

@@ -82,12 +82,16 @@ def main(argv):
         # clients initialisation
         clients = []
         for subfolder in subfolders:
-            try:
-                X_train, Y_train, time_window, max_flow_len, dataset_name = load_set(subfolder, "train",SEED)
-                X_val, Y_val, time_window, max_flow_len, dataset_name = load_set(subfolder, "val",SEED)
-            except:
-                continue
-
+            # print(subfolders)
+            # try:
+            #     X_train, Y_train, time_window, max_flow_len, dataset_name = load_set(subfolder, "train",SEED)
+            #     X_val, Y_val, time_window, max_flow_len, dataset_name = load_set(subfolder, "val",SEED)
+            # except Exception as e:
+            #     print("Error loading dataset ", subfolder, ":", e)
+            #     continue
+            X_train, Y_train, time_window, max_flow_len, dataset_name = load_set(subfolder, "train",SEED)
+            X_val, Y_val, time_window, max_flow_len, dataset_name = load_set(subfolder, "val",SEED)
+            print("Loaded dataset: ", dataset_name, " with time window: ", time_window, " and max flow length: ", max_flow_len)
             client = init_client(subfolder, X_train, Y_train, X_val, Y_val, dataset_name, time_window, max_flow_len)
             clients.append(client)
 

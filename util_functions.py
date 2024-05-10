@@ -31,7 +31,8 @@ def load_dataset(path):
 
     X_train = np.reshape(set_x_orig, (set_x_orig.shape[0], set_x_orig.shape[1], set_x_orig.shape[2], 1))
     Y_train = set_y_orig#.reshape((1, set_y_orig.shape[0]))
-
+    print("X_train shape: " + str(X_train.shape))
+    print("Y_train shape: " + str(Y_train.shape))
     return X_train, Y_train
 
 def load_set(folder_path,set_type,seed):
@@ -46,8 +47,9 @@ def load_set(folder_path,set_type,seed):
         subfolders = sorted(subfolders)
     for dataset_folder in subfolders:
         dataset_folder = dataset_folder.replace("//", "/")  # remove double slashes when needed
-        files = glob.glob(dataset_folder + "/*" + '-' + set_type + '.hdf5')
-
+        files = glob.glob(dataset_folder + "/*" + '-' + set_type + '*.hdf5')
+        # print("files found" + files)
+        print("dataset_folder" + dataset_folder)
         for file in files:
             filename = file.split('/')[-1].strip()
             tw = int(filename.split('-')[0].strip().replace('t', ''))
@@ -73,6 +75,7 @@ def load_set(folder_path,set_type,seed):
                     return None
 
             set_list.append(load_dataset(file))
+            print(set_list)
 
     # Concatenation of all the training and validation sets
     X = set_list[0][0]

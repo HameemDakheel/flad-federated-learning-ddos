@@ -1,0 +1,1 @@
+2024-04-17 23:45:17 | total_flows (tot,ben,ddos):(19166,9244,9922) | Packets (train,val,test):(77808,6240,7649) | Train/Val/Test sizes: (15524,1725,1917) | options:--output_folder /kaggle/working/output_folder/ --balance_folder /kaggle/working/balance_folder/ |
